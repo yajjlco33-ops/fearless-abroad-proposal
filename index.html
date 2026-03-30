@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposal - Fearless Abroad</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: #f7f6f2; color: #1a1a18; min-height: 100vh; padding: 3rem 1.5rem; }
+
+  .wrap { max-width: 740px; margin: 0 auto; }
+
+  .hero { background: #ffffff; border-radius: 16px; padding: 3rem 2.5rem 2.5rem; margin-bottom: 1.5rem; position: relative; overflow: hidden; border: 1px solid #e8e6e0; }
+  .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #1D9E75, #0F6E56); }
+  .hero-label { font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: #888780; margin-bottom: 1.25rem; }
+  .hero-headline { font-family: 'Playfair Display', serif; font-size: 2.1rem; font-weight: 600; line-height: 1.2; margin-bottom: 1rem; color: #1a1a18; }
+  .hero-sub { font-size: 15px; line-height: 1.75; color: #5F5E5A; max-width: 580px; }
+
+  .problem { background: #ffffff; border-left: 3px solid #1D9E75; border-radius: 0 12px 12px 0; padding: 1.5rem 2rem; margin-bottom: 1.5rem; }
+  .problem p { font-size: 15px; line-height: 1.8; color: #2C2C2A; }
+
+  .section-label { font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: #888780; margin-bottom: 1.25rem; }
+
+  .phase-block { background: #ffffff; border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; border: 1px solid #e8e6e0; display: flex; gap: 1rem; align-items: flex-start; }
+  .phase-num { width: 34px; height: 34px; border-radius: 50%; background: #E1F5EE; color: #0F6E56; font-size: 13px; font-weight: 500; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+  .phase-title { font-size: 15px; font-weight: 500; color: #1a1a18; margin-bottom: 6px; }
+  .phase-desc { font-size: 13px; color: #5F5E5A; line-height: 1.65; }
+  .phase-tag { display: inline-block; font-size: 11px; background: #E1F5EE; color: #0F6E56; padding: 3px 10px; border-radius: 20px; margin-top: 8px; font-weight: 500; letter-spacing: 0.03em; }
+
+  .divider { height: 1px; background: #e8e6e0; margin: 2rem 0; }
+
+  .kickoff { background: #f7f6f2; border-radius: 12px; padding: 1.5rem 2rem; margin-bottom: 1rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; border: 1px solid #e8e6e0; }
+  .kickoff-title { font-size: 15px; font-weight: 500; color: #1a1a18; margin-bottom: 4px; }
+  .kickoff-desc { font-size: 13px; color: #5F5E5A; line-height: 1.55; }
+  .kickoff-price { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 600; color: #1a1a18; white-space: nowrap; }
+  .kickoff-price span { font-size: 13px; font-weight: 400; color: #888780; font-family: 'DM Sans', sans-serif; }
+
+  .retainer { background: #ffffff; border: 1.5px solid #1D9E75; border-radius: 16px; padding: 2rem 2rem 1.75rem; margin-bottom: 1.5rem; }
+  .retainer-top { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 8px; }
+  .retainer-price { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 600; color: #1a1a18; line-height: 1; }
+  .retainer-price span { font-size: 15px; font-weight: 400; color: #888780; font-family: 'DM Sans', sans-serif; }
+  .badge { font-size: 11px; background: #E1F5EE; color: #0F6E56; padding: 5px 14px; border-radius: 20px; font-weight: 500; letter-spacing: 0.05em; white-space: nowrap; }
+
+  .include-list { list-style: none; }
+  .include-list li { font-size: 14px; color: #2C2C2A; padding: 9px 0; border-bottom: 1px solid #f0eeea; display: flex; align-items: flex-start; gap: 12px; line-height: 1.55; }
+  .include-list li:last-child { border-bottom: none; padding-bottom: 0; }
+  .check { color: #1D9E75; font-size: 15px; flex-shrink: 0; margin-top: 1px; }
+
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.5rem; }
+  .stat-card { background: #ffffff; border: 1px solid #e8e6e0; border-radius: 12px; padding: 1.25rem 1.5rem; }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 2.25rem; font-weight: 600; color: #1D9E75; line-height: 1; margin-bottom: 6px; }
+  .stat-desc { font-size: 13px; color: #5F5E5A; line-height: 1.5; }
+
+  .terms { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 2rem; }
+  .term { flex: 1; min-width: 140px; background: #ffffff; border: 1px solid #e8e6e0; border-radius: 10px; padding: 1rem 1.25rem; }
+  .term-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #888780; margin-bottom: 5px; }
+  .term-val { font-size: 14px; font-weight: 500; color: #1a1a18; }
+
+  .cta { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; padding-top: 1.5rem; border-top: 1px solid #e8e6e0; }
+  .cta-name { font-family: 'Playfair Display', serif; font-size: 1.15rem; color: #1a1a18; margin-bottom: 2px; }
+  .cta-role { font-size: 13px; color: #888780; }
+  .cta-btn { background: #1D9E75; color: #ffffff; border: none; padding: 13px 30px; border-radius: 10px; font-size: 14px; font-weight: 500; cursor: pointer; font-family: 'DM Sans', sans-serif; letter-spacing: 0.02em; text-decoration: none; display: inline-block; }
+  .cta-btn:hover { background: #0F6E56; }
+
+  @media (max-width: 540px) {
+    .hero { padding: 2.5rem 1.5rem 2rem; }
+    .hero-headline { font-size: 1.6rem; }
+    .stats { grid-template-columns: 1fr; }
+    .kickoff { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="hero">
+    <p class="hero-label">Proposal &nbsp;/&nbsp; Fearless Abroad &nbsp;/&nbsp; March 2026</p>
+    <h1 class="hero-headline">Your pages have the right words.<br>They just need to look the part.</h1>
+    <p class="hero-sub">You have written the copy. You have the brand. What is missing is the visual execution that makes visitors feel the value before they read a single sentence. That is what I am here to fix.</p>
+  </div>
+
+  <div class="problem">
+    <p>I reviewed fearlessabroad.com. The brand has real positioning potential but the pages are working against it right now. Text-heavy sections, no visual hierarchy, and generic layouts are costing you conversions every single day. Premium brands do not just sound different. They look different. Here is exactly how we change that.</p>
+  </div>
+
+  <p class="section-label">Three things I will fix on your sales page right away</p>
+
+  <div class="phase-block">
+    <div class="phase-num">1</div>
+    <div>
+      <p class="phase-title">A hero that stops the scroll</p>
+      <p class="phase-desc">Your current hero blends into the page. A full-width section with strong visual contrast, a weighted headline, and a single above-the-fold CTA will anchor the entire page and communicate premium positioning in under 3 seconds.</p>
+      <span class="phase-tag">High impact</span>
+    </div>
+  </div>
+
+  <div class="phase-block">
+    <div class="phase-num">2</div>
+    <div>
+      <p class="phase-title">Walls of text become scannable sections</p>
+      <p class="phase-desc">Benefit paragraphs converted into icon grids and styled callout boxes using your brand colors. Visitors scan before they read. The layout needs to reward both behaviors or you lose them before they reach your offer.</p>
+      <span class="phase-tag">Conversion lift</span>
+    </div>
+  </div>
+
+  <div class="phase-block">
+    <div class="phase-num">3</div>
+    <div>
+      <p class="phase-title">Testimonials that actually build trust</p>
+      <p class="phase-desc">Plain-text testimonials carry no visual weight. Card components with quote styling, name, location, and subtle borders transform the same words into credible social proof that moves people toward the buy button.</p>
+      <span class="phase-tag">Trust signal</span>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <p class="section-label">Engagement structure</p>
+
+  <div class="kickoff">
+    <div>
+      <p class="kickoff-title">Phase 1: Full page redesign</p>
+      <p class="kickoff-desc">Sales page, checkout, waitlist, thank you, terms, privacy policy,<br>earnings disclaimer, and 404. All 8 pages. Estimated 8 to 10 hours.</p>
+    </div>
+    <div class="kickoff-price">$100 <span>one-time</span></div>
+  </div>
+
+  <div class="retainer">
+    <div class="retainer-top">
+      <div>
+        <p class="section-label" style="margin-bottom: 6px;">Phase 2: Monthly retainer</p>
+        <div class="retainer-price">$500 <span>/ month</span></div>
+      </div>
+      <span class="badge">Recommended</span>
+    </div>
+    <ul class="include-list">
+      <li><span class="check">&#10003;</span> Unlimited design updates and copy swaps on existing pages</li>
+      <li><span class="check">&#10003;</span> Up to 2 new pages built per month as your offer evolves</li>
+      <li><span class="check">&#10003;</span> Monthly conversion audit of the sales page with written recommendations</li>
+      <li><span class="check">&#10003;</span> Button, layout, and CTA testing based on how visitors behave</li>
+      <li><span class="check">&#10003;</span> 24 to 48 hour turnaround on every request</li>
+      <li><span class="check">&#10003;</span> One dedicated person who already knows your brand inside out — no briefing someone new every time</li>
+    </ul>
+  </div>
+
+  <div class="stats">
+    <div class="stat-card">
+      <div class="stat-num">8+</div>
+      <div class="stat-desc">Pages redesigned in Phase 1 with full brand alignment</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">48hr</div>
+      <div class="stat-desc">Maximum turnaround on any change request during the retainer</div>
+    </div>
+  </div>
+
+  <p class="section-label">Terms</p>
+  <div class="terms">
+    <div class="term">
+      <div class="term-label">Kickoff deposit</div>
+      <div class="term-val">50% upfront</div>
+    </div>
+    <div class="term">
+      <div class="term-label">Retainer billing</div>
+      <div class="term-val">1st of each month</div>
+    </div>
+    <div class="term">
+      <div class="term-label">Cancellation</div>
+      <div class="term-val">14 days notice</div>
+    </div>
+    <div class="term">
+      <div class="term-label">Hourly rate</div>
+      <div class="term-val">$10/hr on project</div>
+    </div>
+  </div>
+
+  <div class="cta">
+    <div>
+      <p class="cta-name">Jay</p>
+      <p class="cta-role">GHL Design and Automation Specialist</p>
+    </div>
+    <a href="mailto:" class="cta-btn">Let's get started &rarr;</a>
+  </div>
+
+</div>
+</body>
+</html>
